@@ -13,7 +13,13 @@ export function reducer(state: State = initialState, action: Actions ): State {
   switch (action.type) {
     case ADD_TODO:
       return {
-        entities: [...state.entities, {id: Date.now(), text: action.payload, complete: false}]
+        entities: [...state.entities,
+          {
+            id: Date.now(),
+            text: action.payload,
+            complete: true
+          }
+        ]
       };
     case REMOVE_TODO:
       return {
@@ -22,7 +28,10 @@ export function reducer(state: State = initialState, action: Actions ): State {
     case TOGGLE_TODO:
       return {
         ...state,
-        entities: state.entities.map(item => item.id === action.payload.id ? { ...item,  complete: !action.payload.complete } : item)
+        entities: state.entities.map(item => item.id === action.payload.id ?
+          { ...item,
+            complete: !action.payload.complete
+          } : item)
       };
 
     default:
