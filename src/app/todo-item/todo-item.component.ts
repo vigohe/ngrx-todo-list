@@ -7,7 +7,7 @@ import { Todo } from '../models/todo';
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
-  @Input() todo: Todo[];
+  @Input() todo: Todo;
   @Output() toggle = new EventEmitter<Todo>();
 
   constructor() { }

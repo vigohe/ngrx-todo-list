@@ -1,3 +1,4 @@
+import { metaReducers } from './reducers';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
@@ -19,7 +20,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     })
