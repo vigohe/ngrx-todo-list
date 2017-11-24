@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import {reducers} from './reducers/index';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
-    })
+    }),
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

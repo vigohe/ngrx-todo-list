@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import {Todo} from './models/todo';
-import {AddTodo, ToggleTodo} from './actions/todo';
+import {AddTodo, ToggleTodo, RemoveTodo} from './actions/todo';
 import {State} from './reducers/index';
 
 @Component({
@@ -24,6 +24,10 @@ export class AppComponent {
 
   onToggle(todo: Todo) {
     this.store.dispatch(new ToggleTodo(todo));
+  }
+
+  onRemove(todo: Todo) {
+    this.store.dispatch(new RemoveTodo(todo));
   }
 
 }

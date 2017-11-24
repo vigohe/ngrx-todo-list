@@ -9,6 +9,7 @@ import { Todo } from '../models/todo';
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() toggle = new EventEmitter<Todo>();
+  @Output() remove = new EventEmitter<Todo>();
 
   constructor() { }
 
@@ -17,6 +18,10 @@ export class TodoItemComponent implements OnInit {
 
   onChecked(todo: Todo) {
     this.toggle.emit(todo);
+  }
+
+  onRemove(todo: Todo) {
+    this.remove.emit(todo);
   }
 
 }

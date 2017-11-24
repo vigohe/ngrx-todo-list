@@ -1,3 +1,4 @@
 <h1 [style.text-decoration]="todo.complete ? 'line-through' : ''">
   {{todo.text}} <input type="checkbox" (change)="onChecked(todo)" [checked]="todo.complete"/>
+  <fa name="trash" (click)="onRemove(todo)"></fa>
 </h1>
