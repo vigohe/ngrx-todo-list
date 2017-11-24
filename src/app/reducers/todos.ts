@@ -17,7 +17,7 @@ export function reducer(state: State = initialState, action: Actions ): State {
           {
             id: Date.now(),
             text: action.payload,
-            complete: true
+            complete: false
           }
         ]
       };

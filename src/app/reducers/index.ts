@@ -12,7 +12,7 @@ export const reducers: ActionReducerMap<State> = {
   todo: fromTodo.reducer,
 };
 
-function logger(reducer: ActionReducer<State>): any {
+export function logger(reducer: ActionReducer<State>): any {
   return storeLogger()(reducer);
 }
 
